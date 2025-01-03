@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(243, 185, 84);
+    background: linear-gradient(148deg, rgba(243, 185, 84, 1) 0%, #f3b954 20%, rgba(244, 155, 57, 1) 20%, rgba(244, 155, 57, 1) 80%, rgba(243, 185, 84, 1) 80%);
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: url('assets/bg2.png');
+    background-repeat: round;
+    width: 400px;
+    height: 400px;
+    transition: all .2s ease;
+}
+
+.title {
+    height: 120px;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .4));
+    transition: all .2s ease;
+}
+
+.cell {
+    /* border: 1px solid black; */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.sprite {
+    width: 80px;
+    height: 80px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.small-btn {
+    width: 50px;
+    height: 50px;
+}
+
+
+button {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 100%;
+    border: 3px solid;
+    background: #FF9E02;
+    filter: drop-shadow(0 4px 4px rgba(0, 0, 0, .4));
+}
+
+i {
+    font-size: 2em;
+    color: #EE041C;
+    transition: all .2s ease
+}
+
+button i {
+    font-size: 1.3em;
+}
+
+button:hover i {
+    font-size: 1.8em;
+}
+
+button .sprite {
+    width: 50px;
+    height: 50px;
+}
+
+.sprite-win {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    bottom: 10px;
+    /* filter: contrast(1.3); */
+    filter: drop-shadow(0 4px 40px #FFF327);
+}
+
+.shadow {
+    z-index: -10;
+}
+
+.shenron {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 190%;
+    z-index: -10;
+    transition: all .2s ease;
+}
+
+.shenron-right {
+    position: absolute;
+    height: 190%;
+    right: -450px;
+    top: 150px;
+    z-index: -10;
+}
+
+@media only screen and (max-width: 1280px) {
+    .shenron {
+        left: -150px
+    }
+
+    .shenron-right {
+        right: -600px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .board {
+        width: 300px;
+        height: 300px;
+    }
+
+    .title {
+        height: 100px;
+    }
+
+    button {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shenron {
+        left: -160px;
+        height: 170%;
+    }
+
+    .shenron-right {
+        right: -610px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .shenron {
+        left: -260px
+    }
+
+    .shenron-right {
+        right: -710px;
+    }
+}
